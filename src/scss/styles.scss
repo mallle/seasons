@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+//Browser reset
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+
+// 1. Import the initial variables
+@import "~bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add purple and its invert
+$purple: #A4508B;
+$purple-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $purple;
+$primary-invert: $purple-invert;
+
+// Set color of links
+$link: $purple;
+
+// 4. Import the rest of Bulma
+@import "~bulma";
+
+// Import component
+@import "~bulma-calendar/src/sass/index.sass";
+@import "~bulma-calendar/src/sass/timepicker.sass";
+
+
+@media (max-width: 770px){
+    .title.is-5{
+        padding-top: 4rem;
+    } 
+}
+
+// table {
+// 	width: 350px;
+// }
+
+// table,
+// td,
+// caption {
+// 	border: 1px solid black;
+// 	border-collapse: collapse;
+// 	padding: 0.4em;
+// 	text-align: center;
+// }
+
+// td:nth-of-type(6),
+// td:nth-of-type(7) {
+// 	background: #ebf5d7;
+// 	color: #666;
+// }
+
+// caption,
+// tr:first-of-type {
+// 	background: #666;
+// 	color: #c4ced3;
+// 	font-weight: bold;
+// }
+
+// td.heute {
+// 	color: red;
+// 	font-weight: bold;
+// 	background: #ffebe6;
+// }
