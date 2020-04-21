@@ -101,6 +101,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./src/scss/styles.scss
@@ -118,9 +119,7 @@ function icalDownload(events) {
   isc.generateFile();
 }
 
-var ICS =
-/*#__PURE__*/
-function () {
+var ICS = /*#__PURE__*/function () {
   function ICS(events) {
     _classCallCheck(this, ICS);
 
@@ -343,58 +342,60 @@ var events;
 
 function getSeasons(date) {
   var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 28;
-  events = [{
-    'date': addDays(date, 0),
-    'name': 'Winter',
-    'description': 'Peace and quiet, rest, alone time, solo-time, don’t make demands of me, give me space, I want to feel safe and cozy, I’m not available right now to you, sensitivity, wisdom, creativity, letting go, renewal. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
-  }, {
-    'date': addDays(date, 7),
-    'name': 'Spring',
-    'description': 'Rebirth, renewal, fresh-start, productive, focused, independent, learning, strong, able to take on challenges, physically energized, concentration. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
-  }, {
-    'date': addDays(date, 14),
-    'name': 'Summer',
-    'description': 'Outward and expressive, flirty, creative, playful, community-focused, relationship building, service, nurturing, love-making, creating, building, holding space for others. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
-  }, {
-    'date': addDays(date, 22),
-    'name': 'Fall',
-    'description': 'Lower energy, hormones are dipping, need more space, ask less of me, I don’t want to give right now, moody, less focus and concentration, I want to create, less coordinated, mentally creative, less physically active, heightened creativity, assertive, strategic. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
-  }, {
-    'date': addDays(date, parseInt(length)),
-    'name': 'Start of new cycle',
-    'description': 'Period starts'
-  }];
-  var resultsText = document.getElementById('resultsText');
-  var downloadButton = document.getElementById('downloadButton'); //Delete all children of resultsText and the downloadButton if l
+  return function (date) {
+    events = [{
+      'date': addDays(date, 0),
+      'name': 'Winter',
+      'description': 'Peace and quiet, rest, alone time, solo-time, don’t make demands of me, give me space, I want to feel safe and cozy, I’m not available right now to you, sensitivity, wisdom, creativity, letting go, renewal. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
+    }, {
+      'date': addDays(date, 7),
+      'name': 'Spring',
+      'description': 'Rebirth, renewal, fresh-start, productive, focused, independent, learning, strong, able to take on challenges, physically energized, concentration. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
+    }, {
+      'date': addDays(date, 14),
+      'name': 'Summer',
+      'description': 'Outward and expressive, flirty, creative, playful, community-focused, relationship building, service, nurturing, love-making, creating, building, holding space for others. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
+    }, {
+      'date': addDays(date, 22),
+      'name': 'Fall',
+      'description': 'Lower energy, hormones are dipping, need more space, ask less of me, I don’t want to give right now, moody, less focus and concentration, I want to create, less coordinated, mentally creative, less physically active, heightened creativity, assertive, strategic. Taken from: https://risingwoman.com/4-archetypes-of-the-female-cycle/'
+    }, {
+      'date': addDays(date, parseInt(length)),
+      'name': 'Start of new cycle',
+      'description': 'Period starts'
+    }];
+    var resultsText = document.getElementById('resultsText');
+    var downloadButton = document.getElementById('downloadButton'); //Delete all children of resultsText and the downloadButton if l
 
-  resultsText.querySelectorAll('*').forEach(function (n) {
-    return n.remove();
-  });
-  downloadButton.querySelectorAll('*').forEach(function (n) {
-    return n.remove();
-  });
-  var headlineResult = document.createElement('h5');
-  headlineResult.innerHTML = "Here are your estimated dates for the 4 seasons and the start of your next period";
-  headlineResult.className = "title is-5";
-  resultsText.appendChild(headlineResult); //Create texts
+    resultsText.querySelectorAll('*').forEach(function (n) {
+      return n.remove();
+    });
+    downloadButton.querySelectorAll('*').forEach(function (n) {
+      return n.remove();
+    });
+    var headlineResult = document.createElement('h5');
+    headlineResult.innerHTML = "Here are your estimated dates for the 4 seasons and the start of your next period";
+    headlineResult.className = "title is-5";
+    resultsText.appendChild(headlineResult); //Create texts
 
-  for (var key in events) {
-    var p = document.createElement("p");
-    var date = events[key].date;
-    p.innerHTML = events[key].name + ': ' + date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
-    resultsText.appendChild(p);
-  } //Crate Download Button and info text to button
+    for (var key in events) {
+      var p = document.createElement("p");
+      var date = events[key].date;
+      p.innerHTML = events[key].name + ': ' + date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
+      resultsText.appendChild(p);
+    } //Crate Download Button and info text to button
 
 
-  var btn = document.createElement("button");
-  downloadButton.appendChild(btn);
-  btn.innerHTML = 'Download the events to your calendar';
-  btn.id = 'download';
-  btn.className = 'button is-primary';
-  var infoText = document.createElement("p");
-  downloadButton.appendChild(infoText);
-  infoText.innerHTML = 'Including descriptions for every season';
-  infoText.className = 'has-text-primary is-size-7';
+    var btn = document.createElement("button");
+    downloadButton.appendChild(btn);
+    btn.innerHTML = 'Download the events to your calendar';
+    btn.id = 'download';
+    btn.className = 'button is-primary';
+    var infoText = document.createElement("p");
+    downloadButton.appendChild(infoText);
+    infoText.innerHTML = 'Including descriptions for every season';
+    infoText.className = 'has-text-primary is-size-7';
+  }(date);
 }
 
 function addDays(date, days) {
