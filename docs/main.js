@@ -127,8 +127,16 @@ var ICS = /*#__PURE__*/function () {
   }
 
   _createClass(ICS, [{
+    key: "events",
+    get: function get() {
+      return this._events;
+    } //iso date for ical formats
+    ,
+    set: function set(events) {
+      this._events = events;
+    }
+  }, {
     key: "isofix",
-    //iso date for ical formats
     value: function isofix(d) {
       var offset = ("0" + new Date().getTimezoneOffset() / 60).slice(-2);
 
@@ -202,14 +210,6 @@ var ICS = /*#__PURE__*/function () {
         return String.fromCharCode('0x' + p1);
       });
       return btoa(utf8Bytes);
-    }
-  }, {
-    key: "events",
-    set: function set(events) {
-      this._events = events;
-    },
-    get: function get() {
-      return this._events;
     }
   }]);
 
