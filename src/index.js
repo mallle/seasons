@@ -69,7 +69,7 @@ function getSeasons(date, length = 28) {
     {
       date: addDays(date, parseInt(length)),
       name: "Start of new cycle",
-      description: "Period starts",
+      description: "Period starts - get you new dates here https://mallle.github.io/seasons/",
     },
   ];
 

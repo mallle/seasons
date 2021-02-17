@@ -285,7 +285,7 @@ function getSeasons(date) {
     }, {
       date: addDays(date, parseInt(length)),
       name: "Start of new cycle",
-      description: "Period starts"
+      description: "Period starts - get you new dates here https://mallle.github.io/seasons/"
     }];
     var resultsText = document.getElementById("resultsText");
     var downloadButton = document.getElementById("downloadButton"); //Delete all children of resultsText and the downloadButton if l
